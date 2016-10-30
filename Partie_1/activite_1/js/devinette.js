@@ -14,3 +14,15 @@ var solution = Math.floor(Math.random() * 100) + 1;
 //console.log("(La solution est " + solution + ")");
 
 // TODO : complétez le programme
+
+// Nombre entrer par l'utilisateur
+var userNumber = Number(prompt('Deviner un nombre'));
+
+// comparer les nombres si ils sont trop petit ou trop grand
+if( userNumber == solution ) {
+	console.log(' Bravo ! La solution était ' + solution);
+} else if ( userNumber > solution ) {
+	console.log( userNumber + ' est trop grand.');
+} else if ( userNumber < solution ) {
+	console.log( userNumber + ' est trop petit.');
+}
