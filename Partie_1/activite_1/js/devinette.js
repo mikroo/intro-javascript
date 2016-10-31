@@ -15,14 +15,34 @@ var solution = Math.floor(Math.random() * 100) + 1;
 
 // TODO : complétez le programme
 
-// Nombre entrer par l'utilisateur
-var userNumber = Number(prompt('Deviner un nombre'));
+var userNumber = "",
+	repetition = 0,
+	nombreRepetition = 6;
 
-// comparer les nombres si ils sont trop petit ou trop grand
-if( userNumber == solution ) {
+/* Tant que le nombre entrer par l'utilisateur est différent de la variable solution
+ * On continue de demander à l'utilisateur de devinner le nombre de la variable 50.
+ * Et l'utilisateur à droit de deviner 6 fois seulement
+ */
+while( userNumber !== solution && repetition < nombreRepetition ) {
+	userNumber = Number(prompt("Deviner un nombre"));
+	repetition++;
+
+	// Comparer si le nombre choisi par l'utilisateur est plus petit ou plus grand
+	if( userNumber == solution ) {
 	console.log(' Bravo ! La solution était ' + solution);
-} else if ( userNumber > solution ) {
-	console.log( userNumber + ' est trop grand.');
-} else if ( userNumber < solution ) {
-	console.log( userNumber + ' est trop petit.');
+	} else if ( userNumber > solution ) {
+		console.log( userNumber + ' est trop grand.');
+	} else if ( userNumber < solution ) {
+		console.log( userNumber + ' est trop petit.');
+	} else {
+		console.log('Perdu... La solution était ' + solution);
+	}
 }
+
+/*
+var nombre = 0;
+while ( nombre < 6) {
+	nombre++;
+	console.log(nombre);
+}
+*/
