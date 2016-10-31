@@ -23,6 +23,7 @@ var userNumber = "",
  * On continue de demander à l'utilisateur de devinner le nombre de la variable 50.
  * Et l'utilisateur à droit de deviner 6 fois seulement
  */
+// console.log(solution);
 while( userNumber !== solution && repetition < nombreRepetition ) {
 	userNumber = Number(prompt("Deviner un nombre"));
 	repetition++;
@@ -34,15 +35,10 @@ while( userNumber !== solution && repetition < nombreRepetition ) {
 		console.log( userNumber + ' est trop grand.');
 	} else if ( userNumber < solution ) {
 		console.log( userNumber + ' est trop petit.');
-	} else {
-		console.log('Perdu... La solution était ' + solution);
-	}
+	} 
 }
 
-/*
-var nombre = 0;
-while ( nombre < 6) {
-	nombre++;
-	console.log(nombre);
-}
-*/
+// vérifier si le nombre entrer par l'utilisateur est different de la variable solution
+if ( userNumber != solution ) {
+		console.log('Perdu... La solution était ' + solution);
+	}
