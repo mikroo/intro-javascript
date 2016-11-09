@@ -75,7 +75,7 @@ var compte = {
 		var description = "Titulaire : " + this.titulaire + ", solde : " + this.solde + " euros";
 		return description;
 	}
-}
+};
 
 // User data
 var crediter = Number(prompt("Entrez le montant à créditer : "));
