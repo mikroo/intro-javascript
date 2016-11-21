@@ -1,3 +1,4 @@
+// + adversaire.piece_or + " pièces d'or et " + adversaire.clef
 
 // Des adversaires pour nos héros
 var Personnage = {
@@ -6,6 +7,8 @@ var Personnage = {
 		this.nom = nom;
 		this.sante = sante;
 		this.force = force;
+		this.piece_or = 10;
+		this.clef = 1;
 	},
 	// Attaque un personnage cible
 	attaquer: function(cible) {
@@ -35,7 +38,7 @@ Joueur.initJoueur = function (nom, sante, force) {
 // Renvoie la description du joueur
 Joueur.decrire = function () {
 	var description = this.nom + " a " + this.sante + " points de vie, " +
-        this.force + " en force et " + this.xp + " points d'expérience";
+        this.force + " en force et " + this.xp + " points d'expérience " + this.piece_or + " pièces d'or et " + this.clef;
     return description;
 };
 
@@ -43,8 +46,10 @@ Joueur.decrire = function () {
 Joueur.combattre = function (adversaire) {
 	this.attaquer(adversaire);
 	if(adversaire.sante === 0) {
-		console.log(this.nom + " a tué " + adversaire.nom + " et gagne " + adversaire.valeur + " points d'expérience");
+		console.log(this.nom + " a tué " + adversaire.nom + " et gagne " + adversaire.valeur + " points d'expérience ");
 		this.xp += adversaire.valeur;
+		this.piece_or += adversaire.piece_or;
+		this.clef += adversaire.clef;
 	}
 };
 
