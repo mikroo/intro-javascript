@@ -26,11 +26,17 @@ contacts = []; // tableau de contact
 while(userOption !== '0') {
 	userOption = prompt("Choisissez une option");
 	if(userOption === '1') { // Lister la liste de contacts
+		console.log("\n"); // Saut de ligne
+		if(contacts.length === 0) {
+			console.log("!!! Vous n'avez pas encore ajouter de contact !!!");
+		} else {
+
 		console.log("Voici la liste de tous vos contacts");
 		contacts.forEach(function(contact){
 			console.log(contact.display());
 		});
-		console.log("\n"); // Saut de ligne
+			
+		}
 		console.log("\n"); // Saut de ligne
 
 		// Les options
